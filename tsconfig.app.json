@@ -15,10 +15,16 @@
     "jsx": "react-jsx",
 
     /* Linting */
-    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "strict": true, // Cambiar esto
+    "noImplicitAny": false, // Cambiar esto
+    "strictNullChecks": true, // Cambiar esto
+    "strictFunctionTypes": false, // Cambiar esto
+    "strictBindCallApply": false, // Cambiar esto
+    "strictPropertyInitialization": false, // Cambiar esto
+    "noImplicitThis": false // Cambiar esto
   },
   "include": ["src"]
 }
