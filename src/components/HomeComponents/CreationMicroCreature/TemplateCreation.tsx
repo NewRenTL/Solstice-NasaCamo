@@ -171,6 +171,8 @@ const AnimatedButton = styled(Button)(({ theme }) => ({
     boxShadow: '0 0 15px rgba(0, 255, 255, 0.6)',
   },
 }));
+import { useMainContext } from '../../../MainContext';
+import PopUpComponent from '../PopUpPlanet/PopUpComponent';
 
 const MicroCreatureComponent: React.FC = () => { // Cambié el nombre aquí
   const [type, setType] = useState<string>('');
@@ -178,6 +180,8 @@ const MicroCreatureComponent: React.FC = () => { // Cambié el nombre aquí
   const [size, setSize] = useState<string>('');
   const [additionalItem, setAdditionalItem] = useState<string>('');
   const [stars, setStars] = useState<Star[]>([]);
+
+  const {isPopUpVisible, showPopUp, hidePopUp } = useMainContext();
 
   useEffect(() => {
     const newStars: Star[] = Array.from({ length: 100 }, () => ({
@@ -190,6 +194,7 @@ const MicroCreatureComponent: React.FC = () => { // Cambié el nombre aquí
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    showPopUp();
     console.log({ type, color, size, additionalItem });
     // Aquí puedes agregar la lógica para manejar la personalización
   };
@@ -331,6 +336,7 @@ const MicroCreatureComponent: React.FC = () => { // Cambié el nombre aquí
           </HologramCard>
         </div>
       </FuturisticContainer>
+      {isPopUpVisible && <PopUpComponent></PopUpComponent>}
     </ThemeProvider>
   );
 };
