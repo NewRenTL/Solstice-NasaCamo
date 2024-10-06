@@ -148,8 +148,9 @@ const PopUpComponent = () => {
     setSelectedSoilType(selected);
   };
   return (
-    <div className="flex z-10 fixed inset-0 items-center justify-center bg-black backdrop-blur-[2px] bg-opacity-70">
-      <div className="bg-black flex flex-col pb-4 relative text-black px-6 rounded-lg overflow-y-auto h-[70%] shadow-lg w-[80%] sm:w-[40%]">
+    <div className="flex z-10 fixed inset-0 items-center justify-center bg-black backdrop-blur-[2px] bg-opacity-70 ">
+      <div className="bg-black flex flex-col pb-4 relative text-black px-6 rounded-lg overflow-y-auto h-[70%] shadow-lg w-[80%] sm:w-[40%] transition-all duration-300 ease-in-out hover:shadow-[0_0_20px_10px_rgba(0,206,209,0.8)] hover:ring-4 hover:ring-[#00DEFF] ring-opacity-50">
+        
         <div className="flex sticky z-10 top-0 py-3 w-full flex-row justify-end bg-black items-center">
           <IoIosCloseCircle
             onClick={hidePopUp}
@@ -157,7 +158,9 @@ const PopUpComponent = () => {
           />
         </div>
         <div className="flex flex-col w-full px-5">
-          <h2 className="text-xl font-bold mb-4 text-white">Buscar el planeta ideal:</h2>
+          <h2 className="text-xl font-bold mb-4 text-white">
+            Buscar el planeta ideal:
+          </h2>
           <div className="flex flex-col my-2 mn:flex-row w-full">
             <div className="range1 flex flex-col w-full">
               <label className="w-full flex flex-row text-start text-white">
@@ -303,7 +306,9 @@ const PopUpComponent = () => {
 
           <div className="flex flex-col my-2 mn:flex-row w-full">
             <div className="range1 flex flex-col w-full">
-              <label className="w-full flex flex-row text-start text-white">Ph:</label>
+              <label className="w-full flex flex-row text-start text-white">
+                Ph:
+              </label>
               <Slider
                 min={0.1}
                 max={10.0}
@@ -321,7 +326,9 @@ const PopUpComponent = () => {
                 }}
                 railStyle={{ backgroundColor: "gray", height: 10 }}
               />
-              <p className="flex w-full my-2 text-white">Valor de Ph: {sliderValue3}</p>
+              <p className="flex w-full my-2 text-white">
+                Valor de Ph: {sliderValue3}
+              </p>
             </div>
           </div>
 
