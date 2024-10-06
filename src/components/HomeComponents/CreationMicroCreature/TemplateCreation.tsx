@@ -64,7 +64,7 @@ const imageMap: { [key: string]: string } = {
   'alien-Cryogenic': micro2,
   'alien-Plasmatic': micro8,
   'alien-Radioactive': micro7,
-  'alien-Metallic': micro6,
+  'alien-Metallic': micro10,
 };
 
 interface MicroCreatureImageProps {
