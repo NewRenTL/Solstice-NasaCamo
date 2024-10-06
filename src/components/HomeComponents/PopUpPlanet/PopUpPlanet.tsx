@@ -174,7 +174,7 @@ const PopUpPlanet = () => {
 
       {isPopUpVisible && (
         <div className="fixed inset-0 flex items-center justify-center bg-black backdrop-blur-[2px] bg-opacity-70">
-          <div className="bg-white flex flex-col relative text-black px-6 rounded-lg overflow-y-auto h-[70%] shadow-lg w-[80%] sm:w-[40%]">
+          <div className="bg-white scrollbar-thin scrollbar-thumb-slate-50 flex flex-col relative text-black px-6 rounded-lg overflow-y-auto h-[70%] shadow-lg w-[80%] sm:w-[40%]">
             <div className="flex sticky z-10 top-0 py-3 w-full flex-row justify-end bg-white items-center">
               <IoIosCloseCircle
                 onClick={hidePopUp}

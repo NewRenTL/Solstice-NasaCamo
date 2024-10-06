@@ -3,6 +3,7 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
+import "./PopUpComponent.css";
 import { IoIosCloseCircle } from "react-icons/io";
 import { useMainContext } from "../../../MainContext";
 
@@ -149,16 +150,15 @@ const PopUpComponent = () => {
   };
   return (
     <div className="flex z-10 fixed inset-0 items-center justify-center bg-black backdrop-blur-[2px] bg-opacity-70 ">
-      <div className="bg-black flex flex-col pb-4 relative text-black px-6 rounded-lg overflow-y-auto h-[70%] shadow-lg w-[80%] sm:w-[40%] transition-all duration-300 ease-in-out hover:shadow-[0_0_20px_10px_rgba(0,206,209,0.8)] hover:ring-4 hover:ring-[#00DEFF] ring-opacity-50">
-        
+      <div className="bg-black custom-scrollbar scrollbar-thin scrollbar-thumb-rounded-full  scrollbar-thumb-cyan-500 scrollbar-track-transparent scrollbar-corner-transparent flex flex-col pb-4 relative text-black px-6 rounded-lg overflow-y-auto h-[70%] shadow-lg w-[80%] sm:w-[40%] transition-all duration-300 ease-in-out hover:shadow-[0_0_20px_10px_rgba(0,206,209,0.8)] hover:ring-4 hover:ring-[#00DEFF] ring-opacity-50">
         <div className="flex sticky z-10 top-0 py-3 w-full flex-row justify-end bg-black items-center">
           <IoIosCloseCircle
             onClick={hidePopUp}
-            className="w-10 h-10 cursor-pointer text-white hover:scale-125 transition hover:text-white items-center"
+            className="w-10 h-10 cursor-pointer text-white hover:scale-125 transition hover:text-[#45E7E7] items-center"
           />
         </div>
         <div className="flex flex-col w-full px-5">
-          <h2 className="text-xl font-bold mb-4 text-white">
+          <h2 className="text-xl font-thin mb-4 text-white">
             Buscar el planeta ideal:
           </h2>
           <div className="flex flex-col my-2 mn:flex-row w-full">
@@ -332,7 +332,7 @@ const PopUpComponent = () => {
             </div>
           </div>
 
-          <button className="bg-[#45E7E7] text-black font-semibold px-4 py-2 rounded-lg hover:bg-[#45E7E7]">
+          <button className="bg-white text-black font-medium px-4 py-2 rounded-lg transition duration-300 hover:text-white hover:bg-[#45E7E7]">
             Submit
           </button>
         </div>
