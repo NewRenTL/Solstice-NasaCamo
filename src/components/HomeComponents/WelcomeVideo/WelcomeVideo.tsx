@@ -1,4 +1,19 @@
+import { 
+  Select, MenuItem, TextField, Button, 
+  Card, CardContent, CardActions, Typography, SelectChangeEvent,
+  ThemeProvider, createTheme, CssBaseline
+} from '@mui/material';
+import { styled } from '@mui/system';
 
+const AnimatedButton = styled(Button)(({ theme }) => ({
+  background: 'linear-gradient(45deg, #00FFFF 30%, #00CCFF 90%)',
+  color:'#000000',
+  transition: 'all 0.3s ease-in-out',
+  '&:hover': {
+    transform: 'scale(1.05)',
+    boxShadow: '0 0 15px rgba(0, 255, 255, 0.6)',
+  },
+}));
 
 const WelcomeVideo = () => {
   return (
@@ -16,7 +31,7 @@ const WelcomeVideo = () => {
         <div className="w-full h-full flex items-center justify-center p-0 m-0">
           <iframe
             className="w-full h-full rounded-md"
-            src="https://www.youtube.com/embed/VoMOXq5f05Q?si=9H0X_Dnjg8XiQbAc" 
+            src="https://www.youtube.com/embed/lHyytCK6ODg?si=FV4sYwJo0AGX-LWS" 
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -24,9 +39,9 @@ const WelcomeVideo = () => {
         </div>
       </div>
       {/* Button */}
-      <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg focus:outline-none">
+      <AnimatedButton>
         Comencemos!
-      </button>
+      </AnimatedButton>
     </section>
   );
 }
