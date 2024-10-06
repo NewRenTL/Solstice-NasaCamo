@@ -148,7 +148,7 @@ const PopUpComponent = () => {
     setSelectedSoilType(selected);
   };
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black backdrop-blur-[2px] bg-opacity-70">
+    <div className="flex z-10 fixed inset-0 items-center justify-center bg-black backdrop-blur-[2px] bg-opacity-70">
       <div className="bg-black flex flex-col pb-4 relative text-black px-6 rounded-lg overflow-y-auto h-[70%] shadow-lg w-[80%] sm:w-[40%]">
         <div className="flex sticky z-10 top-0 py-3 w-full flex-row justify-end bg-black items-center">
           <IoIosCloseCircle
@@ -169,13 +169,13 @@ const PopUpComponent = () => {
                 className="w-full"
                 value={sliderTemperature}
                 onChange={(value) => setSliderTemperature(value as number)}
-                trackStyle={{ backgroundColor: "blue", height: 10 }}
+                trackStyle={{ backgroundColor: "#00DEFF", height: 10 }}
                 handleStyle={{
-                  borderColor: "blue",
+                  borderColor: "#00DEFF",
                   height: 20,
                   width: 20,
                   marginTop: -5,
-                  backgroundColor: "white",
+                  backgroundColor: "#00DEFF",
                 }}
                 railStyle={{ backgroundColor: "gray", height: 10 }}
               />
@@ -196,13 +196,13 @@ const PopUpComponent = () => {
                 className="w-full"
                 value={sliderValue2}
                 onChange={(value) => setSliderValue2(value as number)}
-                trackStyle={{ backgroundColor: "blue", height: 10 }}
+                trackStyle={{ backgroundColor: "#00DEFF", height: 10 }}
                 handleStyle={{
-                  borderColor: "blue",
+                  borderColor: "#00DEFF",
                   height: 20,
                   width: 20,
                   marginTop: -5,
-                  backgroundColor: "white",
+                  backgroundColor: "#00DEFF",
                 }}
                 railStyle={{ backgroundColor: "gray", height: 10 }}
               />
@@ -311,13 +311,13 @@ const PopUpComponent = () => {
                 className="w-full"
                 value={sliderValue3}
                 onChange={(value) => setSliderValue3(value as number)}
-                trackStyle={{ backgroundColor: "blue", height: 10 }}
+                trackStyle={{ backgroundColor: "#00DEFF", height: 10 }}
                 handleStyle={{
-                  borderColor: "blue",
+                  borderColor: "#00DEFF",
                   height: 20,
                   width: 20,
                   marginTop: -5,
-                  backgroundColor: "white",
+                  backgroundColor: "#00DEFF",
                 }}
                 railStyle={{ backgroundColor: "gray", height: 10 }}
               />

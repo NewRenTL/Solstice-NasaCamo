@@ -2,7 +2,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 const TopBar = () => {
   return (
-    <div className="flex flex-row fixed top-0 left-0 z-10 w-full h-14 justify-between px-3 py-2 bg-blue-400">
+    <div className="flex flex-row fixed top-0 left-0 z-20 w-full h-14 justify-between px-3 py-2 bg-blue-400">
       {/* Image of project and letter */}
       <div className="hidden mn:flex flex-row mn:w-[30%] bg-pink-50">
         <div className="flex flex-row bg-fuchsia-500 w-[40%]"></div>
