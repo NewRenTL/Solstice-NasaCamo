@@ -12,6 +12,7 @@ interface MicroCreatureType {
   label: string;
   description: string;
 }
+
 const microCreatureTypes: MicroCreatureType[] = [
   { value: 'extremophile', label: 'Extremophile', description: 'Organisms that thrive in extreme conditions' },
   { value: 'archaeon', label: 'Archaeon', description: 'Unicellular microorganisms similar to bacteria' },
@@ -20,38 +21,50 @@ const microCreatureTypes: MicroCreatureType[] = [
 ];
 
 const colors: string[] = ['Bioluminescent', 'Cryogenic', 'Plasmatic', 'Radioactive', 'Metallic'];
-const sizes: string[] = ['Nano', 'Micro', 'Milli'];
+const sizes: string[] = ['Nano', 'Micro', 'Mili'];
 
 const colorMap: { [key: string]: string } = {
-  'Bioluminiscente': '#00FFFF',
-  'Criogénico': '#A5F2F3',
-  'Plasmático': '#FF00FF',
-  'Radiactivo': '#7FFF00',
-  'Metálico': '#C0C0C0',
+  'Bioluminescent': '#00FFFF',
+  'Cryogenic': '#A5F2F3',
+  'Plasmatic': '#FF00FF',
+  'Radioactive': '#7FFF00',
+  'Metallic': '#C0C0C0',
 };
 
-// Mapa de imágenes para cada combinación de tipo y color
+import micro1 from '../../../assets/images/micro1.svg';
+import micro2 from '../../../assets/images/micro2.svg'; 
+import micro3 from '../../../assets/images/micro3.svg'; 
+import micro4 from '../../../assets/images/micro4.svg'; 
+import micro5 from '../../../assets/images/micro5.svg'; 
+import micro6 from '../../../assets/images/micro6.svg'; 
+import micro7 from '../../../assets/images/micro7.svg'; 
+import micro8 from '../../../assets/images/micro8.svg'; 
+import micro9 from '../../../assets/images/micro9.svg'; 
+import micro10 from '../../../assets/images/micro10.svg';
+import micro11 from '../../../assets/images/micro11.svg'; 
+import micro12 from '../../../assets/images/micro12.svg'; 
+
 const imageMap: { [key: string]: string } = {
-  'extremophile-Bioluminiscente': '/placeholder.svg?height=300&width=300',
-  'extremophile-Criogénico': '/placeholder.svg?height=300&width=300',
-  'extremophile-Plasmático': '/placeholder.svg?height=300&width=300',
-  'extremophile-Radiactivo': '/placeholder.svg?height=300&width=300',
-  'extremophile-Metálico': '/placeholder.svg?height=300&width=300',
-  'archaeon-Bioluminiscente': '/placeholder.svg?height=300&width=300',
-  'archaeon-Criogénico': '/placeholder.svg?height=300&width=300',
-  'archaeon-Plasmático': '/placeholder.svg?height=300&width=300',
-  'archaeon-Radiactivo': '/placeholder.svg?height=300&width=300',
-  'archaeon-Metálico': '/placeholder.svg?height=300&width=300',
-  'tardigrade-Bioluminiscente': '/placeholder.svg?height=300&width=300',
-  'tardigrade-Criogénico': '/placeholder.svg?height=300&width=300',
-  'tardigrade-Plasmático': '/placeholder.svg?height=300&width=300',
-  'tardigrade-Radiactivo': '/placeholder.svg?height=300&width=300',
-  'tardigrade-Metálico': '/placeholder.svg?height=300&width=300',
-  'alien-Bioluminiscente': '/placeholder.svg?height=300&width=300',
-  'alien-Criogénico': '/placeholder.svg?height=300&width=300',
-  'alien-Plasmático': '/placeholder.svg?height=300&width=300',
-  'alien-Radiactivo': '/placeholder.svg?height=300&width=300',
-  'alien-Metálico': '/placeholder.svg?height=300&width=300',
+  'extremophile-Bioluminescent': micro5,
+  'extremophile-Cryogenic': micro1,
+  'extremophile-Plasmatic': micro2,
+  'extremophile-Radioactive': micro4,
+  'extremophile-Metallic': micro3,
+  'archaeon-Bioluminescent': micro2,
+  'archaeon-Cryogenic': micro2,
+  'archaeon-Plasmatic': micro2,
+  'archaeon-Radioactive': micro6,
+  'archaeon-Metallic': micro7,
+  'tardigrade-Bioluminescent': micro8,
+  'tardigrade-Cryogenic': micro9,
+  'tardigrade-Plasmatic': micro10,
+  'tardigrade-Radioactive': micro11,
+  'tardigrade-Metallic': micro12,
+  'alien-Bioluminescent': micro12,
+  'alien-Cryogenic': micro2,
+  'alien-Plasmatic': micro8,
+  'alien-Radioactive': micro7,
+  'alien-Metallic': micro6,
 };
 
 interface MicroCreatureImageProps {
@@ -68,7 +81,7 @@ const MicroCreatureImage: React.FC<MicroCreatureImageProps> = ({ type, color, si
   };
 
   const imageSrc = imageMap[`${type}-${color}`] || '/placeholder.svg?height=300&width=300';
-  const imageSize = sizeMap[size] || 200;
+  const imageSize = sizeMap[size] || 200; // tamaño por defecto
 
   return (
     <img 
@@ -159,7 +172,7 @@ const AnimatedButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-const MicroCreature: React.FC = () => {
+const MicroCreatureComponent: React.FC = () => { // Cambié el nombre aquí
   const [type, setType] = useState<string>('');
   const [color, setColor] = useState<string>('');
   const [size, setSize] = useState<string>('');
@@ -201,7 +214,7 @@ const MicroCreature: React.FC = () => {
           />
         ))}
         <GlowingText variant="h2" align="center" gutterBottom>
-        Micro Creatures Lab
+          Micro Creatures Lab
         </GlowingText>
         <div style={{ display: 'flex', flexDirection: 'row', gap: '24px', flexWrap: 'wrap', justifyContent: 'center' }}>
           <HologramCard sx={{ flex: '1 1 400px', maxWidth: '600px' }}>
@@ -322,4 +335,4 @@ const MicroCreature: React.FC = () => {
   );
 };
 
-export default MicroCreature;
+export default MicroCreatureComponent;
