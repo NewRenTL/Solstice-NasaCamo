@@ -133,13 +133,18 @@ const PopUpPlanet = () => {
   };
 
   const handleSelectChangeEnerygySource = (selected) => {
+    console.log(selected);
     setSelectedEnergy(selected);
   };
   const handleSelectChangeRadiationLevel = (selected) => {
+    console.log(selected);
+
     setSelectedRadiation(selected);
   };
 
   const handleSelectChangeSoilType = (selected) => {
+    console.log(selected);
+
     setSelectedSoilType(selected);
   };
 
@@ -176,7 +181,7 @@ const PopUpPlanet = () => {
                 className="w-10 h-10 cursor-pointer text-red-500 hover:scale-125 transition hover:text-red-700 items-center"
               />
             </div>
-            <div className ="flex flex-col w-full px-5">
+            <div className="flex flex-col w-full px-5">
               <h2 className="text-xl font-bold mb-4">
                 Buscar el planeta ideal:
               </h2>
@@ -191,15 +196,15 @@ const PopUpPlanet = () => {
                     className="w-full"
                     value={sliderValue}
                     onChange={(value) => setSliderValue(value as number)}
-                    trackStyle={{ backgroundColor: "blue", height: 10 }}
+                    trackStyle={{ backgroundColor: "#ff6347", height: 10 }} // Cambiar el color de la parte activa (ejemplo: rojo)
                     handleStyle={{
-                      borderColor: "blue",
-                      height: 20,
-                      width: 20,
-                      marginTop: -5,
-                      backgroundColor: "white",
+                      borderColor: "#ff6347", // Cambiar el borde del "handle"
+                      height: 20, // Tamaño del "handle"
+                      width: 20, // Ancho del "handle"
+                      marginTop: -5, // Ajuste de posición vertical
+                      backgroundColor: "#45E7E7", // Cambiar el color de fondo del "handle"
                     }}
-                    railStyle={{ backgroundColor: "gray", height: 10 }}
+                    railStyle={{ backgroundColor: "gray", height: 10 }} // Cambiar el color de la parte inactiva
                   />
                   <p className="flex w-full my-2">
                     Valor de Temperatura: {sliderValue}
@@ -349,7 +354,7 @@ const PopUpPlanet = () => {
                 </div>
               </div>
 
-              <button className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+              <button className="bg-[#00FFFF] text-white px-4 py-2 rounded-lg hover:bg-[#45E7E7]">
                 Submit
               </button>
             </div>
