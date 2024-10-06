@@ -2,7 +2,7 @@
 
 const WelcomeVideo = () => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8">
+    <section className="flex flex-col items-center pt-14 px-10 justify-center min-h-lvh bg-gray-100">
       {/* Title */}
       <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4 text-center">
         Oceanis
