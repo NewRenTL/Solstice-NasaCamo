@@ -1,0 +1,9 @@
+/* PopUpComponent.css */
+.custom-scrollbar::-webkit-scrollbar-button {
+    display: none; /* Oculta las flechas del scrollbar en navegadores WebKit */
+  }
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    -webkit-appearance: none; /* Elimina las flechas en navegadores WebKit */
+    border-radius: 9999px; /* Hace el thumb completamente redondeado */
+  }
