@@ -159,10 +159,10 @@ const VRPreview: React.FC = () => {
             </Card>
           </VideoContainer>
           <TechText variant="h2">
-            Próximamente para tu VR
+            Coming soon to VR...
           </TechText>
           <Typography variant="h6" align="center" color="textSecondary" paragraph>
-            Sumérgete en una experiencia inmersiva como ninguna otra
+            Embark on an immersive experience like no other.
           </Typography>
           <Button 
             variant="outlined" 
@@ -174,7 +174,7 @@ const VRPreview: React.FC = () => {
               marginTop: '20px',
             }}
           >
-            Más información
+            Learn More
           </Button>
           <VRAnimation />
         </ContentContainer>

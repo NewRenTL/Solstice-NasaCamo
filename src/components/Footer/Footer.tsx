@@ -89,7 +89,7 @@ const Footer = () => {
                 </GlowingText>  
               </div>
               <Typography align="center" variant="body2" color="textSecondary" paddingBottom="16px">
-                Puedes contactarnos a través de nuestros perfiles de LinkedIn
+                Feel free to contact us
               </Typography>
               {/* List of LinkedIn Links */}
               <Box display="flex" flexDirection="column" gap="8px" alignItems="center">
@@ -119,10 +119,10 @@ const Footer = () => {
           <HologramCard sx={{ flex: '1 1 400px', maxWidth: '600px' }}>
             <CardContent>
               <GlowingText variant="h6" align="center" gutterBottom>
-                Acerca del Proyecto
+                About This Project
               </GlowingText>
               <Typography align="center" variant="body2" color="textSecondary" paddingBottom="16px">
-                Este proyecto fue diseñado para el NASA International Space Apps Challenge 2024
+                This project was designed for the 2024 NASA International Space Apps Challenge.
               </Typography>
               <AnimatedButton 
                 variant="contained" 
