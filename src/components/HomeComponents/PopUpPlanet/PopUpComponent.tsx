@@ -394,7 +394,7 @@ const PopUpComponent = () => {
                 <p className="text-[#00DEFF] text-xl text-center my-2 mt-2">{selectedPlanetName}</p>
 
                 <iframe
-                  width="520"
+                  className="flex flex-col w-full"
                   height="240"
                   src={`${selectedPlanet}`} // Cambia selectedPlanet por el ID del video de YouTube
                   frameBorder="0"
