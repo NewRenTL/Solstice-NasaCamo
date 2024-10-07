@@ -182,10 +182,11 @@ const WelcomeVideo: React.FC = () => {
                     Mission: Create the Perfect Microorganism
                   </GlowingTitle>
                   <MissionText variant="body1" align="center">
-                    En un futuro donde la Tierra ya no es habitable, tu misión será personalizar un 
-                    microorganismo para encontrar el planeta ideal donde pueda prosperar. 
-                    Ingresa variables como temperatura y elementos del ecosistema, 
-                    y el sistema seleccionará el mejor planeta para tu creación.
+                    In a future where the Earth is no longer habitable, your mission will
+                    consist on customizing a microorganism to fit into an ideal planet 
+                    where it can thrive.
+                    Change variables such as temperature and ecosystem elements, for the system 
+                    to find the best planet to fit your creation!
                   </MissionText>
                 </CardContent>
               </MissionCard>
@@ -207,7 +208,7 @@ const WelcomeVideo: React.FC = () => {
             </Card>
           </VideoContainer>
           <AnimatedButton variant="contained" size="large">
-            Comencemos!
+            Start
           </AnimatedButton>
         </ContentContainer>
       </FuturisticContainer>
