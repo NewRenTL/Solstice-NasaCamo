@@ -26,15 +26,14 @@ const TopBar = () => {
 
   return (
     <div
-      className={`flex flex-row fixed top-0 left-0 z-20 w-full h-14 justify-between px-3 py-2 ${
+      className={`flex flex-row fixed top-0 left-0 z-20 w-full h-16 justify-between px-3 py-2 ${
         isScrolled ? "backdrop-blur-md bg-opacity-50" : "bg-transparent"
       } transition-all duration-300 ease-in-out`}
     >
       {/* Image of project and letter */}
-      <div className="hidden mn:flex flex-row mn:w-[30%] bg-pink-50">
-        <div className="flex flex-row bg-fuchsia-500 w-[40%]"></div>
-        <div className="flex flex-row bg-orange-600 w-[60%] items-center justify-center">
-          <p className="flex text-center text-[10px]">Solstice</p>
+      <div className="hidden mn:flex flex-row items-center justify-center mn:w-[30%] pt-2 bg-transparent">
+        <div className="flex flex-row justify-center items-center bg-transparent mn:w-[80%] sm:w-[70%] md:w-[55%] lg:w-[40%]">
+          <img  src="/img/project_logo.png"></img>
         </div>
       </div>
       <div className="flex flex-row w-[8%] mn:hidden" onClick={toggleMenu}>
