@@ -277,7 +277,7 @@ const MicroCreatureComponent: React.FC = () => { // Cambié el nombre aquí
                 <TextField
                   value={additionalItem}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAdditionalItem(e.target.value)}
-                  placeholder="Ingresa una característica especial"
+                  placeholder="Enter any special characteristics"
                   fullWidth
                 />
               </form>
@@ -341,7 +341,7 @@ const MicroCreatureComponent: React.FC = () => { // Cambié el nombre aquí
           </HologramCard>
         </div>
       </FuturisticContainer>
-      <style>{`
+      <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
         
         @keyframes pulse {
