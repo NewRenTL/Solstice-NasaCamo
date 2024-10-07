@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Select, MenuItem, TextField, Button, 
-  Card, CardContent, CardActions, Typography, SelectChangeEvent,
+  Card, CardContent, CardActions, Typography, SelectChangeEvent, Box, 
   ThemeProvider, createTheme, CssBaseline
 } from '@mui/material';
 import { styled } from '@mui/system';
@@ -15,6 +15,8 @@ const AnimatedButton = styled(Button)(({ theme }) => ({
   '&:hover': {
     transform: 'scale(1.05)',
     boxShadow: '0 0 15px rgba(0, 255, 255, 0.6)',
+  marginBottom: theme.spacing(4),
+  marginTop: theme.spacing(10),
   },
 }));
 
@@ -68,7 +70,7 @@ const OceanisTitle = styled(Typography)(({ theme }) => ({
   backgroundClip: 'text',
   WebkitBackgroundClip: 'text',
   textShadow: '0 0 20px rgba(0, 255, 255, 0.5)',
-  marginBottom: theme.spacing(10),
+  marginBottom: theme.spacing(4),
   marginTop: theme.spacing(10),
   letterSpacing: '0.1em',
   textAlign: 'center',
@@ -112,6 +114,34 @@ const futuristicTheme = createTheme({
   },
 });
 
+const MissionCard = styled(Card)(({ theme }) => ({
+  background: 'rgba(10, 10, 10, 0.8)',
+  border: '1px solid rgba(0, 255, 255, 0.3)',
+  boxShadow: '0 0 20px rgba(0, 255, 255, 0.2)',
+  padding: theme.spacing(0) ,
+
+  transition: 'all 0.3s ease-in-out',
+  '&:hover': {
+    boxShadow: '0 0 30px rgba(0, 255, 255, 0.4)',
+  },
+  borderRadius: '15px',
+  maxWidth: '600px',
+  margin: 'auto',
+}));
+
+const GlowingTitle = styled(Typography)(({ theme }) => ({
+  color: theme.palette.primary.main,
+  fontWeight: 'bold',
+  textShadow: '0 0 10px rgba(0, 255, 255, 0.5)',
+  marginBottom: theme.spacing(2),
+
+}));
+
+const MissionText = styled(Typography)(({ theme }) => ({
+  color: '#FFFFFF',
+  textShadow: '0 0 5px rgba(255, 255, 255, 0.3)',
+}));
+
 const WelcomeVideo: React.FC = () => {
   const [stars, setStars] = useState<Array<{ x: number; y: number; opacity: number }>>([]);
 
@@ -145,9 +175,21 @@ const WelcomeVideo: React.FC = () => {
             <OceanisTitle variant="h1">
               Zaphir-o
             </OceanisTitle>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Texto de descripción
-            </Typography>
+            <Box display="flex" justifyContent="center" alignItems="center" minHeight="40vh">
+              <MissionCard>
+                <CardContent>
+                  <GlowingTitle variant="h5" align="center">
+                    Misión: Crear el Microorganismo Perfecto
+                  </GlowingTitle>
+                  <MissionText variant="body1" align="center">
+                    En un futuro donde la Tierra ya no es habitable, tu misión será personalizar un 
+                    microorganismo para encontrar el planeta ideal donde pueda prosperar. 
+                    Ingresa variables como temperatura y elementos del ecosistema, 
+                    y el sistema seleccionará el mejor planeta para tu creación.
+                  </MissionText>
+                </CardContent>
+              </MissionCard>
+            </Box>
           </div>
           <VideoContainer>
             <Card>

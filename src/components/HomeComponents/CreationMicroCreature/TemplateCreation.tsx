@@ -165,12 +165,17 @@ const HologramCard = styled(Card)(({ theme }) => ({
 
 const AnimatedButton = styled(Button)(({ theme }) => ({
   background: 'linear-gradient(45deg, #00FFFF 30%, #00CCFF 90%)',
+  padding: '8px 16px', 
+  fontSize: '0.875rem', 
+  borderRadius: '16px', 
   transition: 'all 0.3s ease-in-out',
+  minWidth: '50px', // Reducir el ancho mínimo del botón
   '&:hover': {
-    transform: 'scale(1.05)',
+    transform: 'scale(1.05)', 
     boxShadow: '0 0 15px rgba(0, 255, 255, 0.6)',
   },
 }));
+
 import { useMainContext } from '../../../MainContext';
 import PopUpComponent from '../PopUpPlanet/PopUpComponent';
 
@@ -277,11 +282,11 @@ const MicroCreatureComponent: React.FC = () => { // Cambié el nombre aquí
                 />
               </form>
             </CardContent>
-            <CardActions>
+            <CardActions style={{ justifyContent: 'center' }}>
               <AnimatedButton 
                 onClick={handleSubmit} 
-                fullWidth 
                 variant="contained"
+                style={{ minWidth: '555px' }}
               >
                 Synthesize MicroCreature
               </AnimatedButton>
