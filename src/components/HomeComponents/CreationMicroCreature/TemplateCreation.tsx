@@ -341,6 +341,20 @@ const MicroCreatureComponent: React.FC = () => { // Cambié el nombre aquí
           </HologramCard>
         </div>
       </FuturisticContainer>
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+        
+        @keyframes pulse {
+          0% { transform: scale(1); opacity: 0.2; }
+          50% { transform: scale(1.1); opacity: 0.3; }
+          100% { transform: scale(1); opacity: 0.2; }
+        }
+        
+        @keyframes scan {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(300px); }
+        }
+      `}</style>
       {isPopUpVisible && <PopUpComponent></PopUpComponent>}
     </ThemeProvider>
   );
