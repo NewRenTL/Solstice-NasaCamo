@@ -8,7 +8,7 @@ import { styled } from '@mui/system';
 
 const FuturisticContainer = styled('div')(({ theme }) => ({
   minHeight: '100vh',
-  background: 'linear-gradient(to bottom, #000000, #0A0A0A)',
+  background: 'linear-gradient(to bottom, #000000, #000000)',
   padding: theme.spacing(4),
   position: 'relative',
   overflow: 'hidden',
@@ -36,20 +36,8 @@ const ContentContainer = styled('div')(({ theme }) => ({
 
 const VideoContainer = styled('div')(({ theme }) => ({
   width: '100%',
-  maxWidth: '600px',
+  maxWidth: '800px',
   marginBottom: theme.spacing(4),
-  position: 'relative',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: -5,
-    left: -5,
-    right: -5,
-    bottom: -5,
-    border: '2px solid #00FFFF',
-    borderRadius: '10px',
-    animation: 'pulse 2s infinite',
-  },
 }));
 
 const TechText = styled(Typography)(({ theme }) => ({
@@ -106,7 +94,7 @@ const futuristicTheme = createTheme({
     },
     background: {
       default: '#000000',
-      paper: '#0A0A0A',
+      paper: '#000000',
     },
   },
   typography: {
@@ -145,17 +133,18 @@ const VRPreview: React.FC = () => {
         <ContentContainer>
           <VideoContainer>
             <Card>
-              <CardContent style={{ padding: 0 }}>
-                <iframe
-                  width="100%"
-                  height="315"
-                  src="https://www.youtube.com/embed/lHyytCK6ODg?si=FV4sYwJo0AGX-LWS"
-                  title="VR Preview"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </CardContent>
+            <CardContent style={{ padding: 0 }}>
+              <iframe
+                width="100%"
+                height="450"
+                src="https://www.youtube.com/embed/NgmckFocJX4?si=NrianCmMcXENAqN1"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </CardContent>
             </Card>
           </VideoContainer>
           <TechText variant="h2">

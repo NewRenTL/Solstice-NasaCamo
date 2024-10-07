@@ -9,7 +9,7 @@ import {
 import { styled } from '@mui/system';
 
 const AnimatedButton = styled(Button)(({ theme }) => ({
-  background: 'linear-gradient(45deg, #00FFFF 30%, #00CCFF 90%)',
+  background: 'linear-gradient(45deg, #FFFFFF 30%, #FFFFF 90%)',
   color: '#000000',
   transition: 'all 0.3s ease-in-out',
   '&:hover': {
@@ -22,7 +22,7 @@ const AnimatedButton = styled(Button)(({ theme }) => ({
 
 const FuturisticContainer = styled('div')(({ theme }) => ({
   minHeight: '100vh',
-  background: 'linear-gradient(to bottom, #000000, #0A0A0A)',
+  background: 'linear-gradient(to bottom, #000000, #000000)',
   padding: theme.spacing(4),
   position: 'relative',
   overflow: 'hidden',
@@ -85,7 +85,7 @@ const OceanisTitle = styled(Typography)(({ theme }) => ({
     transform: 'translateX(-50%)',
     width: '60%',
     height: '2px',
-    background: 'linear-gradient(90deg, transparent, #00FFFF, transparent)',
+    background: 'linear-gradient(90deg, transparent, #000000, transparent)',
   },
   '@media (max-width: 1200px)': {
     fontSize: '8rem',

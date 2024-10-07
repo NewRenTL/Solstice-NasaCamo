@@ -341,7 +341,7 @@ const MicroCreatureComponent: React.FC = () => { // Cambié el nombre aquí
           </HologramCard>
         </div>
       </FuturisticContainer>
-      <style jsx global>{`
+      <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
         
         @keyframes pulse {
