@@ -14,6 +14,7 @@ function App() {
             <TopBar></TopBar>
             <Routes>
               <Route path="/" element={<Home></Home>}></Route>
+              <Route path="/home" element={<Home></Home>}></Route>
             </Routes>
           </BrowserRouter>
         </MainContext>

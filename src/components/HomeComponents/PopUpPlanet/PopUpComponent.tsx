@@ -90,6 +90,8 @@ const soilType = [
   },
 ];
 
+const planets = ["Abyssum", "Ferrum", "Hydrium", "Metalis", "Thalasson"];
+
 const PopUpComponent = () => {
   const [sliderTemperature, setSliderTemperature] = useState(50);
   const [sliderValue2, setSliderValue2] = useState(0);
@@ -100,7 +102,31 @@ const PopUpComponent = () => {
   const [selectedEnergy, setSelectedEnergy] = useState(null);
   const [selectedRadiation, setSelectedRadiation] = useState(null);
   const [selectedSoilType, setSelectedSoilType] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const [selectedPlanet, setSelectedPlanet] = useState<string | null>(null); // Para almacenar el planeta
+
   const { hidePopUp } = useMainContext();
+
+  const generateNumber = () => {
+    const sumValues =
+      sliderTemperature + sliderValue2 + sliderValue3 + selectedMetales.length;
+    // Devolver el índice basado en el operador módulo
+    return Math.floor(sumValues) % planets.length;
+  };
+
+  const handleSubmit = () => {
+    setIsLoading(true); // Inicia el estado de carga
+    setShowVideo(false); // Oculta el video
+    const planetIndex = generateNumber(); // Generar índice
+    console.log(planetIndex);
+    console.log(planets[planetIndex]);
+    setSelectedPlanet(planets[planetIndex]);
+    setTimeout(() => {
+      setIsLoading(false); // Detiene el estado de carga después de 5 segundos
+      setShowVideo(true); // Muestra el video después de 5 segundos
+    }, 5000);
+  };
 
   // Manejar los cambios en las opciones seleccionadas
   const handleSelectChangeMetales = (selected) => {
@@ -332,9 +358,25 @@ const PopUpComponent = () => {
             </div>
           </div>
 
-          <button className="bg-white text-black font-medium px-4 py-2 rounded-lg transition duration-300 hover:text-white hover:bg-[#45E7E7]">
+          <button
+            className="bg-white text-black font-medium px-4 py-2 rounded-lg transition duration-300 hover:text-white hover:bg-[#45E7E7]"
+            onClick={handleSubmit}
+          >
             Submit
           </button>
+          <div className="flex justify-center items-center mt-4">
+            {isLoading && (
+              <div className="flex justify-center items-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-cyan-500"></div>
+              </div>
+            )}
+            {showVideo && (
+              <video width="320" height="240" controls>
+                <source src={`videos/${selectedPlanet}.mp4`} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
+          </div>
         </div>
       </div>
     </div>
