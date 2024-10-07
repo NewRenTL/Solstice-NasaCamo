@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Link, CardContent } from '@mui/material';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import { Card, Button } from '@mui/material';
-
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 // MUI theme config
 const futuristicTheme = createTheme({
   palette: {
@@ -77,60 +77,69 @@ const Footer = () => {
   return (
     <ThemeProvider theme={futuristicTheme}>
       <FuturisticContainer>
-        
         <Box style={{ display: 'flex', flexDirection: 'row', gap: '24px', flexWrap: 'wrap', justifyContent: 'center', paddingBottom: '16px'}}>
           {/* Contact Info */}
           <HologramCard sx={{ flex: '1 1 400px', maxWidth: '600px' }}>
             <CardContent>
-              <GlowingText variant="h6" gutterBottom>
-                Card 1
-              </GlowingText>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
+                {/* LinkedIn Icon */}
+                <LinkedInIcon style={{ color: '#00FFFF' }} />
+                <GlowingText variant="h5" align='left'>
+                  LinkedIn
+                </GlowingText>  
+              </div>
               <Typography align="center" variant="body2" color="textSecondary" paddingBottom="16px">
-                Texto 1
+                Puedes contactarnos a través de nuestros perfiles de LinkedIn
               </Typography>
-              <AnimatedButton variant="contained" fullWidth>
-                Subscribe
-              </AnimatedButton>
+              {/* List of LinkedIn Links */}
+              <Box display="flex" flexDirection="column" gap="8px" alignItems="center">
+                <Link href="https://www.linkedin.com/in/dbp0229" target="_blank" color="primary" style={{ fontSize: '15px' }}>
+                  Diego Bustamante Palomino
+                </Link>
+                <Link href="https://www.linkedin.com/in/lucia-giulliana-tello-le%C3%B3n-b8288120b/" target="_blank" color="primary" style={{ fontSize: '15px' }}>
+                  Lucía Tello
+                </Link>
+                <Link href="https://www.linkedin.com/in/jose-tello-leon" target="_blank" color="primary" style={{ fontSize: '15px' }}>
+                  José Tello
+                </Link>
+                <Link href="https://www.linkedin.com/in/valeriaaliagaflores" target="_blank" color="primary" style={{ fontSize: '15px' }}>
+                  Valeria Aliaga Flores
+                </Link>
+                <Link href="https://www.linkedin.com/in/fabiana-castro-426438252" target="_blank" color="primary" style={{ fontSize: '15px' }}>
+                  Fabiana Castro
+                </Link>
+                <Link href="http://linkedin.com/in/josue-hallasi-349a9a248" target="_blank" color="primary" style={{ fontSize: '15px' }}>
+                  Josué Hallasi
+                </Link>
+              </Box>
             </CardContent>
           </HologramCard>
 
-          {/* Social Links */}
+          {/* Additional Information */}
           <HologramCard sx={{ flex: '1 1 400px', maxWidth: '600px' }}>
             <CardContent>
-              <GlowingText variant="h6" gutterBottom>
-                Card 2
+              <GlowingText variant="h6" align="center" gutterBottom>
+                Acerca del Proyecto
               </GlowingText>
               <Typography align="center" variant="body2" color="textSecondary" paddingBottom="16px">
-                Texto 2
+                Este proyecto fue diseñado para el NASA International Space Apps Challenge 2024
               </Typography>
-              <AnimatedButton variant="contained" fullWidth>
-                Subscribe
-              </AnimatedButton>
-            </CardContent>
-          </HologramCard>
-
-          {/* Newsletter Section */}
-          <HologramCard sx={{ flex: '1 1 400px', maxWidth: '600px' }}>
-            <CardContent>
-              <GlowingText variant="h6" gutterBottom>
-                Card 3
-              </GlowingText>
-              <Typography align="center" variant="body2" color="textSecondary" paddingBottom="16px">
-                Texto 3
-              </Typography>
-              <AnimatedButton variant="contained" fullWidth>
-                Subscribe
+              <AnimatedButton 
+                variant="contained" 
+                fullWidth 
+                onClick={() => window.open("https://www.spaceappschallenge.org/", "_blank")}
+              >
+                Learn More
               </AnimatedButton>
             </CardContent>
           </HologramCard>
         </Box>
         <Typography align="center" variant="body2" color="textSecondary">
-          &copy; {new Date().getFullYear()} Company Name. All rights reserved.
+           {new Date().getFullYear()}  NASA International Space Apps Challenge 
         </Typography>
       </FuturisticContainer>
     </ThemeProvider>
   );
 };
-
 // Exporting only Footer Component
 export default Footer;
