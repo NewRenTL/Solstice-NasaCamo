@@ -10,83 +10,83 @@ import { useMainContext } from "../../../MainContext";
 const animatedComponents = makeAnimated();
 
 const Metales = [
-  { value: "HIERRO", label: "Hierro" },
-  { value: "NÍQUEL", label: "Niquel" },
-  { value: "MAGNESIO", label: "Magnesio" },
-  { value: "AZUFRE", label: "Azufre" },
-  { value: "COBRE", label: "Cobre" },
-  { value: "CLORUROS", label: "Cloruros" },
-  { value: "COBALTO", label: "Cobal" },
-  { value: "SULFATOS", label: "Sulfatos" },
-  { value: "CLORUROS", label: "Cloruros" },
+  { value: "IRON", label: "Iron" },
+  { value: "NICKEL", label: "Nickel" },
+  { value: "MAGNESIUM", label: "Magnesium" },
+  { value: "SULFUR", label: "Sulfur" },
+  { value: "COPPER", label: "Copper" },
+  { value: "CHLORIDES", label: "Chlorides" },
+  { value: "COBALT", label: "Cobalt" },
+  { value: "SULFATES", label: "Sulfates" },
+  { value: "CHLORIDES", label: "Chlorides" },
 ];
 
 const Compositions = [
-  { value: "AGUA", label: "Agua" },
-  { value: "SULFATOS", label: "Sulfatos" },
-  { value: "CLORUROS", label: "Cloruros" },
-  { value: "AMONÍACO", label: "Amoníaco" },
-  { value: "METANO", label: "Metano" },
-  { value: "HIERROLIQUIDO", label: "Hierro liquido" },
+  { value: "WATER", label: "Water" },
+  { value: "SULFATES", label: "Sulfates" },
+  { value: "CHLORIDES", label: "Chlorides" },
+  { value: "AMMONIA", label: "Ammonia" },
+  { value: "METHANE", label: "Methane" },
+  { value: "LIQUIDIRON", label: "Liquid Iron" },
 ];
 
 const EnergySources = [
   {
-    value: "GEOTERMICA",
-    label: "Energia Geotermica",
+    value: "GEOTHERMAL",
+    label: "Geothermal Energy",
   },
   {
-    value: "QUIMIOSÍNTESIS",
-    label: "Energia QuimioSíntesis",
+    value: "CHEMOSYNTHESIS",
+    label: "Chemosynthesis Energy",
   },
 ];
 
 const AtmosphereCompostions = [
   {
-    value: "H20",
-    label: "Dioxido de Carbono",
+    value: "H2O",
+    label: "Carbon Dioxide",
   },
   {
     value: "N2",
-    label: "Nitrogeno",
+    label: "Nitrogen",
   },
   {
     value: "CH4",
-    label: "Metano",
+    label: "Methane",
   },
   {
     value: "NH3",
-    label: "Amoníaco",
+    label: "Ammonia",
   },
   {
     value: "HE",
-    label: "Helio",
+    label: "Helium",
   },
   {
     value: "H2",
-    label: "Hidrógeno",
+    label: "Hydrogen",
   },
 ];
 
 const RadiationLevel = [
   {
-    value: "ALTA",
-    label: "Racidiación Alta",
+    value: "HIGH",
+    label: "High Radiation",
   },
   {
-    value: "BAJA",
-    label: "Radiación Baja",
+    value: "LOW",
+    label: "Low Radiation",
   },
 ];
 
 const soilType = [
   {
-    value: "METALIC",
-    label: "Metálicas",
+    value: "METALLIC",
+    label: "Metallic",
   },
   {
     value: "SEDIMENTARY",
-    label: "Rocas Sedimentarias",
+    label: "Sedimentary Rocks",
   },
 ];
 
@@ -159,12 +159,12 @@ const PopUpComponent = () => {
         </div>
         <div className="flex flex-col w-full px-5">
           <h2 className="text-xl font-thin mb-4 text-white">
-            Buscar el planeta ideal:
+            Search for the ideal planet!
           </h2>
           <div className="flex flex-col my-2 mn:flex-row w-full">
             <div className="range1 flex flex-col w-full">
               <label className="w-full flex flex-row text-start text-white">
-                Temperatura:
+                Temperature:
               </label>
               <Slider
                 min={-150}
@@ -183,7 +183,7 @@ const PopUpComponent = () => {
                 railStyle={{ backgroundColor: "gray", height: 10 }}
               />
               <p className="flex w-full my-2 text-white">
-                Valor de Temperatura: {sliderTemperature}
+                Temperature in Celsius: {sliderTemperature}
               </p>
             </div>
           </div>
@@ -191,7 +191,7 @@ const PopUpComponent = () => {
           <div className="flex flex-col my-2 mn:flex-row w-full">
             <div className="range1 flex flex-col w-full">
               <label className="w-full flex flex-row text-start text-white">
-                Presión:
+                Pressure:
               </label>
               <Slider
                 min={0.1}
@@ -210,7 +210,7 @@ const PopUpComponent = () => {
                 railStyle={{ backgroundColor: "gray", height: 10 }}
               />
               <p className="flex w-full my-2 text-white">
-                Valor de presión: {sliderValue2}
+                Pressure in atm: {sliderValue2}
               </p>
             </div>
           </div>
@@ -218,7 +218,7 @@ const PopUpComponent = () => {
           <div className="flex flex-col my-2 mn:flex-row w-full">
             <div className="range1 flex flex-col w-full">
               <label className="w-full flex flex-row text-start text-white">
-                Metales:
+                Metals:
               </label>
               <Select
                 isMulti
@@ -233,7 +233,7 @@ const PopUpComponent = () => {
           <div className="flex flex-col my-2 mn:flex-row w-full">
             <div className="range1 flex flex-col w-full">
               <label className="w-full flex flex-row text-start text-white">
-                Fuente de Energia:
+                Energy Source:
               </label>
               <Select
                 options={EnergySources} // Lista de opciones
@@ -247,7 +247,7 @@ const PopUpComponent = () => {
           <div className="flex flex-col my-2 mn:flex-row w-full">
             <div className="range1 flex flex-col w-full">
               <label className="w-full flex flex-row text-start text-white">
-                Radiación:
+                Radiation:
               </label>
               <Select
                 options={RadiationLevel} // Lista de opciones
@@ -261,7 +261,7 @@ const PopUpComponent = () => {
           <div className="flex flex-col my-2 mn:flex-row w-full">
             <div className="range1 flex flex-col w-full">
               <label className="w-full flex flex-row text-start text-white">
-                Tipo de Suelo:
+                Type of Soil:
               </label>
               <Select
                 options={soilType} // Lista de opciones
@@ -275,7 +275,7 @@ const PopUpComponent = () => {
           <div className="flex flex-col my-2 mn:flex-row w-full">
             <div className="range1 flex flex-col w-full">
               <label className="w-full flex flex-row text-start text-white">
-                Composición del ambiente:
+                Environment composition:
               </label>
               <Select
                 isMulti
@@ -291,7 +291,7 @@ const PopUpComponent = () => {
           <div className="flex flex-col my-2 mn:flex-row w-full">
             <div className="range1 flex flex-col w-full">
               <label className="w-full flex flex-row text-start text-white">
-                Composición de la atmosphera:
+                Atmosphere composition:
               </label>
               <Select
                 isMulti
@@ -327,7 +327,7 @@ const PopUpComponent = () => {
                 railStyle={{ backgroundColor: "gray", height: 10 }}
               />
               <p className="flex w-full my-2 text-white">
-                Valor de Ph: {sliderValue3}
+                Ph value: {sliderValue3}
               </p>
             </div>
           </div>
