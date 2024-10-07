@@ -90,7 +90,15 @@ const soilType = [
   },
 ];
 
-const planets = ["Abyssum", "Ferrum", "Hydrium", "Metalis", "Thalasson"];
+const planets = ["Abyssum", "Ferrum", "Hydriom", "Metalis", "Thalasson"];
+
+const planets2 = {
+    "Hydriom":"https://www.youtube.com/embed/1eX5DptFS00?si=-H5U6nh4LlmJI_iG",
+    "Metalis":"https://www.youtube.com/embed/xbFduLFcBgU?si=MyhLlwiqwSDJIFV8",
+    "Thalasson":"https://www.youtube.com/embed/MneEbHrLoJw?si=FjZKhfFe7qD-Vwxh",
+    "Abyssum":"https://www.youtube.com/embed/1eX5DptFS00?si=e2FGg9LZBR1NqvI0",
+    "Ferrum":"https://www.youtube.com/embed/DlFJlqXMAnw?si=43UHsXORllEDbIQ6"
+}
 
 const PopUpComponent = () => {
   const [sliderTemperature, setSliderTemperature] = useState(50);
@@ -120,8 +128,9 @@ const PopUpComponent = () => {
     setShowVideo(false); // Oculta el video
     const planetIndex = generateNumber(); // Generar índice
     console.log(planetIndex);
+    console.log(planets2[planets[planetIndex]])
     console.log(planets[planetIndex]);
-    setSelectedPlanet(planets[planetIndex]);
+    setSelectedPlanet(planets2[planets[planetIndex]]);
     setTimeout(() => {
       setIsLoading(false); // Detiene el estado de carga después de 5 segundos
       setShowVideo(true); // Muestra el video después de 5 segundos
@@ -370,11 +379,21 @@ const PopUpComponent = () => {
                 <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-cyan-500"></div>
               </div>
             )}
-            {showVideo && (
+            {/* {showVideo && (
               <video width="320" height="240" controls>
                 <source src={`videos/${selectedPlanet}.mp4`} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+            )} */}
+            {showVideo && (
+                <iframe
+                width="520"
+                height="240"
+                src={`${selectedPlanet}`} // Cambia selectedPlanet por el ID del video de YouTube
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             )}
           </div>
         </div>
