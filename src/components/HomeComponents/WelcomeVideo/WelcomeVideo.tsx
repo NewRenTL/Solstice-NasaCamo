@@ -198,7 +198,7 @@ const WelcomeVideo: React.FC = () => {
                 <iframe
                   width="100%"
                   height="450"
-                  src="https://www.youtube.com/embed/lHyytCK6ODg?si=FV4sYwJo0AGX-LWS"
+                  src="https://www.youtube.com/embed/3Lnl8ziLWWY?si=R_KK1yxKbPlOLrt0"
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

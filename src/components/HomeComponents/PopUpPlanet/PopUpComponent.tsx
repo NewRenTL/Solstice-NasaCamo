@@ -93,12 +93,12 @@ const soilType = [
 const planets = ["Abyssum", "Ferrum", "Hydriom", "Metalis", "Thalasson"];
 
 const planets2 = {
-    "Hydriom":"https://www.youtube.com/embed/1eX5DptFS00?si=-H5U6nh4LlmJI_iG",
-    "Metalis":"https://www.youtube.com/embed/xbFduLFcBgU?si=MyhLlwiqwSDJIFV8",
-    "Thalasson":"https://www.youtube.com/embed/MneEbHrLoJw?si=FjZKhfFe7qD-Vwxh",
-    "Abyssum":"https://www.youtube.com/embed/1eX5DptFS00?si=e2FGg9LZBR1NqvI0",
-    "Ferrum":"https://www.youtube.com/embed/DlFJlqXMAnw?si=43UHsXORllEDbIQ6"
-}
+  Hydriom: "https://www.youtube.com/embed/1eX5DptFS00?si=-H5U6nh4LlmJI_iG",
+  Metalis: "https://www.youtube.com/embed/xbFduLFcBgU?si=MyhLlwiqwSDJIFV8",
+  Thalasson: "https://www.youtube.com/embed/MneEbHrLoJw?si=FjZKhfFe7qD-Vwxh",
+  Abyssum: "https://www.youtube.com/embed/1eX5DptFS00?si=e2FGg9LZBR1NqvI0",
+  Ferrum: "https://www.youtube.com/embed/DlFJlqXMAnw?si=43UHsXORllEDbIQ6",
+};
 
 const PopUpComponent = () => {
   const [sliderTemperature, setSliderTemperature] = useState(50);
@@ -112,6 +112,9 @@ const PopUpComponent = () => {
   const [selectedSoilType, setSelectedSoilType] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const [selectedPlanetName, setSelectedPlanetName] = useState<string | null>(
+    null
+  );
   const [selectedPlanet, setSelectedPlanet] = useState<string | null>(null); // Para almacenar el planeta
 
   const { hidePopUp } = useMainContext();
@@ -128,7 +131,8 @@ const PopUpComponent = () => {
     setShowVideo(false); // Oculta el video
     const planetIndex = generateNumber(); // Generar índice
     console.log(planetIndex);
-    console.log(planets2[planets[planetIndex]])
+    console.log(planets2[planets[planetIndex]]);
+    setSelectedPlanetName(planets[planetIndex]);
     console.log(planets[planetIndex]);
     setSelectedPlanet(planets2[planets[planetIndex]]);
     setTimeout(() => {
@@ -386,14 +390,19 @@ const PopUpComponent = () => {
               </video>
             )} */}
             {showVideo && (
+              <div className="flex flex-col w-full my-2">
+                <p className="text-[#00DEFF] text-xl text-center my-2 mt-2">{selectedPlanetName}</p>
+
                 <iframe
-                width="520"
-                height="240"
-                src={`${selectedPlanet}`} // Cambia selectedPlanet por el ID del video de YouTube
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+                  width="520"
+                  height="240"
+                  src={`${selectedPlanet}`} // Cambia selectedPlanet por el ID del video de YouTube
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                {/* Nombre del planeta */}
+              </div>
             )}
           </div>
         </div>
