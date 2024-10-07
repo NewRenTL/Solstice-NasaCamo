@@ -173,7 +173,7 @@ const WelcomeVideo: React.FC = () => {
         <ContentContainer>
           <div>
             <OceanisTitle variant="h1">
-              Zaphir-o
+              Zephir-o
             </OceanisTitle>
             <Box display="flex" justifyContent="center" alignItems="center" minHeight="40vh">
               <MissionCard>
