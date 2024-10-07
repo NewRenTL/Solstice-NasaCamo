@@ -109,6 +109,7 @@ const VRPreview: React.FC = () => {
     const newStars = Array.from({ length: 100 }, () => ({
       x: Math.random() * 100,
       y: Math.random() * 100,
+      
       opacity: Math.random(),
     }));
     setStars(newStars);
